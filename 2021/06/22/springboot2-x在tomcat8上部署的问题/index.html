@@ -68,19 +68,19 @@
   };
 </script>
 
-  <meta name="description" content="原文链接:http://www.cnblogs.com/wangyayun/p/6405425.html区别一句话：分布式是并联工作的，集群是串联工作的。分布式是指将不同的业务分布在不同的地方。 而集群指的是将几台服务器集中在一起，实现同一业务。分布式中的每一个节点，都可以做集群。 而集群并不一定就是分布式的。">
-<meta name="keywords" content="分布式,集群">
+  <meta name="description" content="最近公司在实行国产化开发, 项目部署用的是东方通(TongWeb)这个服务中间件, 这是一个基于tomcat开发的服务器.提供给我们使用的版本是基于tomcat8开发的, 比较老旧, 不出意外, 部署的时候报错了, 错误如下:123456789101112131415161718192021222324252627282930313233343536373839404142434445464748">
+<meta name="keywords" content="springboot,tomcat">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java分布式与集群的区别和联系">
-<meta property="og:url" content="http://WhiteAlbum-Night.github.io/2018/11/20/Java分布式与集群的区别和联系/index.html">
+<meta property="og:title" content="springboot2.x在tomcat8上部署的问题">
+<meta property="og:url" content="http://WhiteAlbum-Night.github.io/2021/06/22/springboot2-x在tomcat8上部署的问题/index.html">
 <meta property="og:site_name" content="你好啊">
-<meta property="og:description" content="原文链接:http://www.cnblogs.com/wangyayun/p/6405425.html区别一句话：分布式是并联工作的，集群是串联工作的。分布式是指将不同的业务分布在不同的地方。 而集群指的是将几台服务器集中在一起，实现同一业务。分布式中的每一个节点，都可以做集群。 而集群并不一定就是分布式的。">
+<meta property="og:description" content="最近公司在实行国产化开发, 项目部署用的是东方通(TongWeb)这个服务中间件, 这是一个基于tomcat开发的服务器.提供给我们使用的版本是基于tomcat8开发的, 比较老旧, 不出意外, 部署的时候报错了, 错误如下:123456789101112131415161718192021222324252627282930313233343536373839404142434445464748">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2021-06-22T08:27:38.941Z">
+<meta property="og:updated_time" content="2021-06-22T08:52:38.584Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java分布式与集群的区别和联系">
-<meta name="twitter:description" content="原文链接:http://www.cnblogs.com/wangyayun/p/6405425.html区别一句话：分布式是并联工作的，集群是串联工作的。分布式是指将不同的业务分布在不同的地方。 而集群指的是将几台服务器集中在一起，实现同一业务。分布式中的每一个节点，都可以做集群。 而集群并不一定就是分布式的。">
-  <link rel="canonical" href="http://WhiteAlbum-Night.github.io/2018/11/20/Java分布式与集群的区别和联系/">
+<meta name="twitter:title" content="springboot2.x在tomcat8上部署的问题">
+<meta name="twitter:description" content="最近公司在实行国产化开发, 项目部署用的是东方通(TongWeb)这个服务中间件, 这是一个基于tomcat开发的服务器.提供给我们使用的版本是基于tomcat8开发的, 比较老旧, 不出意外, 部署的时候报错了, 错误如下:123456789101112131415161718192021222324252627282930313233343536373839404142434445464748">
+  <link rel="canonical" href="http://WhiteAlbum-Night.github.io/2021/06/22/springboot2-x在tomcat8上部署的问题/">
 
 
 <script id="page-configurations">
@@ -94,7 +94,7 @@
   };
 </script>
 
-  <title>Java分布式与集群的区别和联系 | 你好啊</title>
+  <title>springboot2.x在tomcat8上部署的问题 | 你好啊</title>
   
 
 
@@ -273,7 +273,7 @@
   
   
   <div class="post-block post">
-    <link itemprop="mainEntityOfPage" href="http://WhiteAlbum-Night.github.io/2018/11/20/Java分布式与集群的区别和联系/">
+    <link itemprop="mainEntityOfPage" href="http://WhiteAlbum-Night.github.io/2021/06/22/springboot2-x在tomcat8上部署的问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="WhiteAlbum_Night">
@@ -285,7 +285,7 @@
       <meta itemprop="name" content="你好啊">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Java分布式与集群的区别和联系
+        <h1 class="post-title" itemprop="name headline">springboot2.x在tomcat8上部署的问题
 
           
         </h1>
@@ -301,19 +301,11 @@
                 
               
 
-              <time title="创建时间：2018-11-20 21:33:01" itemprop="dateCreated datePublished" datetime="2018-11-20T21:33:01+08:00">2018-11-20</time>
+              <time title="创建时间：2021-06-22 16:24:37 / 修改时间：16:52:38" itemprop="dateCreated datePublished" datetime="2021-06-22T16:24:37+08:00">2021-06-22</time>
             </span>
           
             
 
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-22 16:27:38" itemprop="dateModified" datetime="2021-06-22T16:27:38+08:00">2021-06-22</time>
-              </span>
             
           
             <span class="post-meta-item">
@@ -322,7 +314,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/develop-record/" itemprop="url" rel="index"><span itemprop="name">develop record</span></a></span>
 
                 
                 
@@ -347,7 +339,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span>2.5k</span>
+              <span>7.5k</span>
             </span>
           
             <span class="post-meta-item" title="阅读时长">
@@ -357,7 +349,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span>2 分钟</span>
+              <span>7 分钟</span>
             </span>
           
 
@@ -370,40 +362,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>原文链接:<a href="http://www.cnblogs.com/wangyayun/p/6405425.html" target="_blank" rel="noopener">http://www.cnblogs.com/wangyayun/p/6405425.html</a></p><h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p>一句话：分布式是并联工作的，集群是串联工作的。</p><h4 id="分布式是指将不同的业务分布在不同的地方。-而集群指的是将几台服务器集中在一起，实现同一业务。"><a href="#分布式是指将不同的业务分布在不同的地方。-而集群指的是将几台服务器集中在一起，实现同一业务。" class="headerlink" title="分布式是指将不同的业务分布在不同的地方。 而集群指的是将几台服务器集中在一起，实现同一业务。"></a>分布式是指将不同的业务分布在不同的地方。 而集群指的是将几台服务器集中在一起，实现同一业务。</h4><p>分布式中的每一个节点，都可以做集群。 而集群并不一定就是分布式的。</p><a id="more"></a>
+        <p>最近公司在实行国产化开发, 项目部署用的是东方通(TongWeb)这个服务中间件, 这是一个基于tomcat开发的服务器.提供给我们使用的版本是基于tomcat8开发的, 比较老旧, 不出意外, 部署的时候报错了, 错误如下:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">ERROR 20324 --- [http-nio-8080-exec-4] o.s.b.w.servlet.support.ErrorPageFilter  : Forwarding to error page from request [/swagger-resources] due to exception [Filter 执行抛出一个异常]</span><br><span class="line"></span><br><span class="line">javax.servlet.ServletException: Filter 执行抛出一个异常</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:201)</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:167)</span><br><span class="line">	at com.citygis.business.core.filter.ValidationFilter.doFilterInternal(ValidationFilter.java:91)</span><br><span class="line">	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:194)</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:167)</span><br><span class="line">	at com.citygis.business.core.filter.JwtAuthenticationTokenFilter.doFilterInternal(JwtAuthenticationTokenFilter.java:62)</span><br><span class="line">	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:194)</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:167)</span><br><span class="line">	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124)</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:194)</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:167)</span><br><span class="line">	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:204)</span><br><span class="line">	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)</span><br><span class="line">	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)</span><br><span class="line">	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:194)</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:167)</span><br><span class="line">	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)</span><br><span class="line">	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:194)</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:167)</span><br><span class="line">	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)</span><br><span class="line">	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:194)</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:167)</span><br><span class="line">	at org.springframework.boot.web.servlet.support.ErrorPageFilter.doFilter(ErrorPageFilter.java:126)</span><br><span class="line">	at org.springframework.boot.web.servlet.support.ErrorPageFilter.access$000(ErrorPageFilter.java:64)</span><br><span class="line">	at org.springframework.boot.web.servlet.support.ErrorPageFilter$1.doFilterInternal(ErrorPageFilter.java:101)</span><br><span class="line">	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)</span><br><span class="line">	at org.springframework.boot.web.servlet.support.ErrorPageFilter.doFilter(ErrorPageFilter.java:119)</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:194)</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:167)</span><br><span class="line">	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)</span><br><span class="line">	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:194)</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:167)</span><br><span class="line">	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)</span><br><span class="line">	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)</span><br><span class="line">	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:544)</span><br><span class="line">	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)</span><br><span class="line">	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)</span><br><span class="line">	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:698)</span><br><span class="line">	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)</span><br><span class="line">	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:364)</span><br><span class="line">	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:624)</span><br><span class="line">	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)</span><br><span class="line">	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:831)</span><br><span class="line">	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1651)</span><br><span class="line">	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)</span><br><span class="line">	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)</span><br><span class="line">	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)</span><br><span class="line">	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)</span><br><span class="line">	at java.lang.Thread.run(Thread.java:748)</span><br><span class="line">Caused by: java.lang.NoSuchMethodError: javax.servlet.http.HttpServletRequest.getHttpServletMapping()Ljavax/servlet/http/HttpServletMapping;</span><br><span class="line">	at org.springframework.web.util.UrlPathHelper.skipServletPathDetermination(UrlPathHelper.java:265)</span><br><span class="line">	at org.springframework.web.util.UrlPathHelper.getLookupPathForRequest(UrlPathHelper.java:250)</span><br><span class="line">	at org.springframework.web.cors.UrlBasedCorsConfigurationSource.resolvePath(UrlBasedCorsConfigurationSource.java:260)</span><br><span class="line">	at org.springframework.web.cors.UrlBasedCorsConfigurationSource.getCorsConfiguration(UrlBasedCorsConfigurationSource.java:244)</span><br><span class="line">	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:86)</span><br><span class="line">	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)</span><br><span class="line">	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:194)</span><br><span class="line">	... 54 common frames omitted</span><br></pre></td></tr></table></figure><a id="more"></a>
 
 
-<p>举例：就比如新浪网，访问的人多了，他可以做一个群集，前面放一个响应服务器，后面几台服务器完成同一业务，如果有业务访问的时候，响应服务器看哪台服务器的负载不是很重，就将给哪一台去完成。</p>
-<p>而分布式，从窄意上理解，也跟集群差不多， 但是它的组织比较松散，不像集群，有一个组织性，一台服务器垮了，其它的服务器可以顶上来。</p>
-<p>分布式的每一个节点，都完成不同的业务，一个节点垮了，那这个业务就不可访问了。</p>
-<h4 id="简单说，分布式是以缩短单个任务的执行时间来提升效率的，而集群则是通过提高单位时间内执行的任务数来提升效率。"><a href="#简单说，分布式是以缩短单个任务的执行时间来提升效率的，而集群则是通过提高单位时间内执行的任务数来提升效率。" class="headerlink" title="简单说，分布式是以缩短单个任务的执行时间来提升效率的，而集群则是通过提高单位时间内执行的任务数来提升效率。"></a>简单说，分布式是以缩短单个任务的执行时间来提升效率的，而集群则是通过提高单位时间内执行的任务数来提升效率。</h4><p>简单的例子说明一下：</p>
-<p>如果一个任务由10个子任务组成，每个子任务单独执行需1小时，则在一台服务器上执行该任务需10小时。</p>
-<p>采用分布式方案，提供10台服务器，每台服务器只负责处理一个子任务，不考虑子任务间的依赖关系，执行完这个任务只需一个小时。(这种工作模式的一个典型代表就是Hadoop的Map/Reduce分布式计算模型）</p>
-<p>而采用集群方案，同样提供10台服务器，每台服务器都能独立处理这个任务。假设有10个任务同时到达，10个服务器将同时工作，1小时后，10个任务同时完成，这样，整身来看，还是1小时内完成一个任务！</p>
-<h3 id="集群概念"><a href="#集群概念" class="headerlink" title="集群概念"></a>集群概念</h3><h4 id="两大关键特性"><a href="#两大关键特性" class="headerlink" title="两大关键特性"></a>两大关键特性</h4><p>集群是一组协同工作的服务实体，用以提供比单一服务实体更具扩展性与可用性的服务平台。在客户端看来，一个集群就象是一个服务实体，但事实上集群由一组服务实体组成。与单一服务实体相比较，集群提供了以下两个关键特性：</p>
-<p><strong>1.可扩展性：</strong>集群的性能不限于单一的服务实体，新的服务实体可以动态地加入到集群，从而增强集群的性能。</p>
-<p><strong>2.高可用性：</strong>集群通过服务实体冗余使客户端免于轻易遇到out of service的警告。在集群中，同样的服务可以由多个服务实体提供。如果一个服务实体失败了，另一个服务实体会接管失败的服务实体。集群提供的从一个出 错的服务实体恢复到另一个服务实体的功能增强了应用的可用性。</p>
-<h4 id="两大能力"><a href="#两大能力" class="headerlink" title="两大能力"></a>两大能力</h4><p>为了具有可扩展性和高可用性特点，集群的必须具备以下两大能力：</p>
-<p><strong>1.负载均衡：</strong>负载均衡能把任务比较均衡地分布到集群环境下的计算和网络资源。</p>
-<p><strong>2.错误恢复：</strong>由于某种原因，执行某个任务的资源出现故障，另一服务实体中执行同一任务的资源接着完成任务。这种由于一个实体中的资源不能工作，另一个实体中的资源透明的继续完成任务的过程叫错误恢复。</p>
-<p>负载均衡和错误恢复都要求各服务实体中有执行同一任务的资源存在，而且对于同一任务的各个资源来说，执行任务所需的信息视图（信息上下文）必须是一样的。</p>
-<h4 id="两大技术"><a href="#两大技术" class="headerlink" title="两大技术"></a>两大技术</h4><p>实现集群务必要有以下两大技术：</p>
-<p><strong>1.集群地址：</strong>集群由多个服务实体组成，集群客户端通过访问集群的集群地址获取集群内部各服务实体的功能。具有单一集群地址（也叫单一影像）是集群的一个基 本特征。维护集群地址的设置被称为负载均衡器。负载均衡器内部负责管理各个服务实体的加入和退出，外部负责集群地址向内部服务实体地址的转换。有的负载均 衡器实现真正的负载均衡算法，有的只支持任务的转换。只实现任务转换的负载均衡器适用于支持ACTIVE-STANDBY的集群环境，在那里，集群中只有 一个服务实体工作，当正在工作的服务实体发生故障时，负载均衡器把后来的任务转向另外一个服务实体。</p>
-<p><strong>2.内部通信：</strong>为了能协同工作、实现负载均衡和错误恢复，集群各实体间必须时常通信，比如负载均衡器对服务实体心跳测试信息、服务实体间任务执行上下文信息的通信。</p>
-<p>具有同一个集群地址使得客户端能访问集群提供的计算服务，一个集群地址下隐藏了各个服务实体的内部地址，使得客户要求的计算服务能在各个服务实体之间分布。内部通信是集群能正常运转的基础，它使得集群具有均衡负载和错误恢复的能力。</p>
-<h3 id="集群分类"><a href="#集群分类" class="headerlink" title="集群分类"></a>集群分类</h3><p>Linux集群主要分成三大类( 高可用集群， 负载均衡集群，科学计算集群)</p>
-<h4 id="高可用集群-High-Availability-Cluster"><a href="#高可用集群-High-Availability-Cluster" class="headerlink" title="高可用集群(High Availability Cluster)"></a>高可用集群(High Availability Cluster)</h4><p>常见的就是2个节点做成的HA集群，有很多通俗的不科学的名称，比如”双机热备”, “双机互备”, “双机”.</p>
-<p>高可用集群解决的是保障用户的应用程序持续对外提供服务的能力。 (请注意高可用集群既不是用来保护业务数据的，保护的是用户的业务程序对外不间断提供服务，把因软件/硬件/人为造成的故障对业务的影响降低到最小程度)。</p>
-<h4 id="负载均衡集群-Load-Balance-Cluster"><a href="#负载均衡集群-Load-Balance-Cluster" class="headerlink" title="负载均衡集群(Load Balance Cluster)"></a>负载均衡集群(Load Balance Cluster)</h4><p>负载均衡系统：集群中所有的节点都处于活动状态，它们分摊系统的工作负载。一般Web服务器集群、数据库集群和应用服务器集群都属于这种类型。</p>
-<p>负载均衡集群一般用于相应网络请求的网页服务器，数据库服务器。这种集群可以在接到请求时，检查接受请求较少，不繁忙的服务器，并把请求转到这些服务器上。从检查其他服务器状态这一点上看，负载均衡和容错集群很接近，不同之处是数量上更多。</p>
-<h4 id="科学计算集群-High-Performance-Computing-Cluster"><a href="#科学计算集群-High-Performance-Computing-Cluster" class="headerlink" title="科学计算集群(High Performance Computing Cluster)"></a>科学计算集群(High Performance Computing Cluster)</h4><p>高性能计算(High Perfermance Computing)集群，简称HPC集群。这类集群致力于提供单个计算机所不能提供的强大的计算能力。</p>
-<h3 id="分布式（集群）与集群的联系与区别"><a href="#分布式（集群）与集群的联系与区别" class="headerlink" title="分布式（集群）与集群的联系与区别"></a>分布式（集群）与集群的联系与区别</h3><p><strong>分布式是指将不同的业务分布在不同的地方。</strong></p>
-<p><strong>而集群指的是将几台服务器集中在一起，实现同一业务。</strong></p>
-<p><strong>分布式中的每一个节点，都可以做集群。</strong></p>
-<p><strong>而集群并不一定就是分布式的。</strong></p>
-<p>举例：就比如新浪网，访问的人多了，他可以做一个群集，前面放一个响应服务器，后面几台服务器完成同一业务，如果有业务访问的时候，响应服务器看哪台服务器的负载不是很重，就将给哪一台去完成。</p>
-<p>而分布式，从窄意上理解，也跟集群差不多， 但是它的组织比较松散，不像集群，有一个组织性，一台服务器垮了，其它的服务器可以顶上来。</p>
-<p>分布式的每一个节点，都完成不同的业务，一个节点垮了，哪这个业务就不可访问了。</p>
+<p>在使用tomcat9部署的时候并没有出现这个问题, 考虑是springboot版本和tomcat版本不对应导致的</p>
+<p>解决办法: 去掉springboot自带的tomcat依赖并改为由tomcat容器提供(不然本地启动会由于没有容器而报错), 添加servlet依赖</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</span><br><span class="line">    &lt;exclusions&gt;</span><br><span class="line">        &lt;exclusion&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-tomcat&lt;/artifactId&gt;</span><br><span class="line">        &lt;/exclusion&gt;</span><br><span class="line">    &lt;/exclusions&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-tomcat&lt;/artifactId&gt;</span><br><span class="line">    &lt;scope&gt;provided&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;javax.servlet&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;javax.servlet-api&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;3.1.0&lt;/version&gt;</span><br><span class="line">    &lt;scope&gt;provided&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<p>依赖中的scope属性设置为provided表示只在项目编译时提供此依赖, 并不会被打包, 由特定容器提供</p>
 
     </div>
 
@@ -420,7 +386,7 @@
     <strong>本文作者： </strong>WhiteAlbum_Night</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://WhiteAlbum-Night.github.io/2018/11/20/Java分布式与集群的区别和联系/" title="Java分布式与集群的区别和联系">http://WhiteAlbum-Night.github.io/2018/11/20/Java分布式与集群的区别和联系/</a>
+    <a href="http://WhiteAlbum-Night.github.io/2021/06/22/springboot2-x在tomcat8上部署的问题/" title="springboot2.x在tomcat8上部署的问题">http://WhiteAlbum-Night.github.io/2021/06/22/springboot2-x在tomcat8上部署的问题/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -435,9 +401,9 @@
           
           <div class="post-tags">
             
-              <a href="/tags/分布式/" rel="tag"><i class="fa fa-tag"></i> 分布式</a>
+              <a href="/tags/springboot/" rel="tag"><i class="fa fa-tag"></i> springboot</a>
             
-              <a href="/tags/集群/" rel="tag"><i class="fa fa-tag"></i> 集群</a>
+              <a href="/tags/tomcat/" rel="tag"><i class="fa fa-tag"></i> tomcat</a>
             
           </div>
         
@@ -447,8 +413,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2018/11/09/Welcome/" rel="next" title="Welcome To WhiteAlbum_Night">
-                  <i class="fa fa-chevron-left"></i> Welcome To WhiteAlbum_Night
+                <a href="/2021/05/24/Linux下安装postgresql/" rel="next" title="Linux下安装和卸载plsql">
+                  <i class="fa fa-chevron-left"></i> Linux下安装和卸载plsql
                 </a>
               
             </div>
@@ -456,10 +422,6 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2019/09/17/SpringCloud学习笔记/" rel="prev" title="SpringCloud学习笔记">
-                  SpringCloud学习笔记 <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
@@ -508,8 +470,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#区别"><span class="nav-number">1.</span> <span class="nav-text">区别</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#分布式是指将不同的业务分布在不同的地方。-而集群指的是将几台服务器集中在一起，实现同一业务。"><span class="nav-number">1.1.</span> <span class="nav-text">分布式是指将不同的业务分布在不同的地方。 而集群指的是将几台服务器集中在一起，实现同一业务。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#简单说，分布式是以缩短单个任务的执行时间来提升效率的，而集群则是通过提高单位时间内执行的任务数来提升效率。"><span class="nav-number">1.2.</span> <span class="nav-text">简单说，分布式是以缩短单个任务的执行时间来提升效率的，而集群则是通过提高单位时间内执行的任务数来提升效率。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#集群概念"><span class="nav-number">2.</span> <span class="nav-text">集群概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#两大关键特性"><span class="nav-number">2.1.</span> <span class="nav-text">两大关键特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#两大能力"><span class="nav-number">2.2.</span> <span class="nav-text">两大能力</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#两大技术"><span class="nav-number">2.3.</span> <span class="nav-text">两大技术</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#集群分类"><span class="nav-number">3.</span> <span class="nav-text">集群分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#高可用集群-High-Availability-Cluster"><span class="nav-number">3.1.</span> <span class="nav-text">高可用集群(High Availability Cluster)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#负载均衡集群-Load-Balance-Cluster"><span class="nav-number">3.2.</span> <span class="nav-text">负载均衡集群(Load Balance Cluster)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#科学计算集群-High-Performance-Computing-Cluster"><span class="nav-number">3.3.</span> <span class="nav-text">科学计算集群(High Performance Computing Cluster)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分布式（集群）与集群的联系与区别"><span class="nav-number">4.</span> <span class="nav-text">分布式（集群）与集群的联系与区别</span></a></li></ol></div>
-        
       </div>
       <!--/noindex-->
 

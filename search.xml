@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>springboot2.x在tomcat8上部署的问题</title>
+      <link href="/2021/06/22/springboot2-x%E5%9C%A8tomcat8%E4%B8%8A%E9%83%A8%E7%BD%B2%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+      <url>/2021/06/22/springboot2-x%E5%9C%A8tomcat8%E4%B8%8A%E9%83%A8%E7%BD%B2%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<p>最近公司在实行国产化开发, 项目部署用的是东方通(TongWeb)这个服务中间件, 这是一个基于tomcat开发的服务器.提供给我们使用的版本是基于tomcat8开发的, 比较老旧, 不出意外, 部署的时候报错了, 错误如下:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">ERROR 20324 --- [http-nio-8080-exec-4] o.s.b.w.servlet.support.ErrorPageFilter  : Forwarding to error page from request [/swagger-resources] due to exception [Filter 执行抛出一个异常]</span><br><span class="line"></span><br><span class="line">javax.servlet.ServletException: Filter 执行抛出一个异常</span><br><span class="line">at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:201)</span><br><span class="line">at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:167)</span><br><span class="line">at com.citygis.business.core.filter.ValidationFilter.doFilterInternal(ValidationFilter.java:91)</span><br><span class="line">at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)</span><br><span class="line">at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:194)</span><br><span class="line">at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:167)</span><br><span class="line">at com.citygis.business.core.filter.JwtAuthenticationTokenFilter.doFilterInternal(JwtAuthenticationTokenFilter.java:62)</span><br><span class="line">at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)</span><br><span class="line">at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:194)</span><br><span class="line">at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:167)</span><br><span class="line">at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124)</span><br><span class="line">at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:194)</span><br><span class="line">at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:167)</span><br><span class="line">at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:204)</span><br><span class="line">at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)</span><br><span class="line">at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)</span><br><span class="line">at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)</span><br><span class="line">at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:194)</span><br><span class="line">at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:167)</span><br><span class="line">at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)</span><br><span class="line">at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)</span><br><span class="line">at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:194)</span><br><span class="line">at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:167)</span><br><span class="line">at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)</span><br><span class="line">at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)</span><br><span class="line">at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:194)</span><br><span class="line">at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:167)</span><br><span class="line">at org.springframework.boot.web.servlet.support.ErrorPageFilter.doFilter(ErrorPageFilter.java:126)</span><br><span class="line">at org.springframework.boot.web.servlet.support.ErrorPageFilter.access$000(ErrorPageFilter.java:64)</span><br><span class="line">at org.springframework.boot.web.servlet.support.ErrorPageFilter$1.doFilterInternal(ErrorPageFilter.java:101)</span><br><span class="line">at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)</span><br><span class="line">at org.springframework.boot.web.servlet.support.ErrorPageFilter.doFilter(ErrorPageFilter.java:119)</span><br><span class="line">at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:194)</span><br><span class="line">at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:167)</span><br><span class="line">at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)</span><br><span class="line">at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)</span><br><span class="line">at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:194)</span><br><span class="line">at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:167)</span><br><span class="line">at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)</span><br><span class="line">at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)</span><br><span class="line">at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:544)</span><br><span class="line">at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)</span><br><span class="line">at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)</span><br><span class="line">at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:698)</span><br><span class="line">at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)</span><br><span class="line">at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:364)</span><br><span class="line">at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:624)</span><br><span class="line">at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)</span><br><span class="line">at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:831)</span><br><span class="line">at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1651)</span><br><span class="line">at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)</span><br><span class="line">at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)</span><br><span class="line">at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)</span><br><span class="line">at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)</span><br><span class="line">at java.lang.Thread.run(Thread.java:748)</span><br><span class="line">Caused by: java.lang.NoSuchMethodError: javax.servlet.http.HttpServletRequest.getHttpServletMapping()Ljavax/servlet/http/HttpServletMapping;</span><br><span class="line">at org.springframework.web.util.UrlPathHelper.skipServletPathDetermination(UrlPathHelper.java:265)</span><br><span class="line">at org.springframework.web.util.UrlPathHelper.getLookupPathForRequest(UrlPathHelper.java:250)</span><br><span class="line">at org.springframework.web.cors.UrlBasedCorsConfigurationSource.resolvePath(UrlBasedCorsConfigurationSource.java:260)</span><br><span class="line">at org.springframework.web.cors.UrlBasedCorsConfigurationSource.getCorsConfiguration(UrlBasedCorsConfigurationSource.java:244)</span><br><span class="line">at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:86)</span><br><span class="line">at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)</span><br><span class="line">at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:194)</span><br><span class="line">... 54 common frames omitted</span><br></pre></td></tr></table></figure><a id="more"></a><p>在使用tomcat9部署的时候并没有出现这个问题, 考虑是springboot版本和tomcat版本不对应导致的</p><p>解决办法: 去掉springboot自带的tomcat依赖并改为由tomcat容器提供(不然本地启动会由于没有容器而报错), 添加servlet依赖</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</span><br><span class="line">    &lt;exclusions&gt;</span><br><span class="line">        &lt;exclusion&gt;</span><br><span class="line">            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;spring-boot-starter-tomcat&lt;/artifactId&gt;</span><br><span class="line">        &lt;/exclusion&gt;</span><br><span class="line">    &lt;/exclusions&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-tomcat&lt;/artifactId&gt;</span><br><span class="line">    &lt;scope&gt;provided&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;javax.servlet&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;javax.servlet-api&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;3.1.0&lt;/version&gt;</span><br><span class="line">    &lt;scope&gt;provided&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure><p>依赖中的scope属性设置为provided表示只在项目编译时提供此依赖, 并不会被打包, 由特定容器提供</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> develop record </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> springboot </tag>
+            
+            <tag> tomcat </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Linux下安装和卸载plsql</title>
       <link href="/2021/05/24/Linux%E4%B8%8B%E5%AE%89%E8%A3%85postgresql/"/>
       <url>/2021/05/24/Linux%E4%B8%8B%E5%AE%89%E8%A3%85postgresql/</url>
@@ -38,7 +65,7 @@
       
       <categories>
           
-          <category> Blog </category>
+          <category> blog </category>
           
       </categories>
       
@@ -63,14 +90,14 @@
       
       <categories>
           
-          <category> Java </category>
+          <category> java </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Ueditor </tag>
+            <tag> ueditor </tag>
             
         </tags>
       
@@ -88,14 +115,14 @@
       
       <categories>
           
-          <category> Java </category>
+          <category> java </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> SpringCloud </tag>
+            <tag> springcloud </tag>
             
         </tags>
       
@@ -113,7 +140,7 @@
       
       <categories>
           
-          <category> Java </category>
+          <category> java </category>
           
       </categories>
       
@@ -140,16 +167,16 @@
       
       <categories>
           
-          <category> Blog </category>
+          <category> blog </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Welcome </tag>
+            <tag> welcome </tag>
             
-            <tag> Github </tag>
+            <tag> github </tag>
             
         </tags>
       
